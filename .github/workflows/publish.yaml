@@ -1,5 +1,5 @@
 name: Build and Publish Python Package to Nexus
-
+#reacciona a un push sobre cualquier rama
 on:
   push:
     branches:
@@ -13,6 +13,7 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v3
 
+#intalamos una version de python cualquiera
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
@@ -22,11 +23,12 @@ jobs:
         run: |
           pip install --upgrade build twine
 
+#toma el codigo y lo lleva a una carpeta
       - name: Build package
         run: |
           python -m build
 
-      - name: List build output
+      - name: List build output  #validacion
         run: |
           ls -la
           ls -la dist
