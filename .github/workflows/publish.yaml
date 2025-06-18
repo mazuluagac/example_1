@@ -1,9 +1,7 @@
 name: Build and Publish Python Package to Nexus
 #reacciona a un push sobre cualquier rama
 on:
-  push:
-    branches:
-      - main  # o la rama que desees
+  workflow_dispatch:
 
 jobs:
   deploy:
